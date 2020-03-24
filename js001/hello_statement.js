@@ -19,25 +19,25 @@
  */
 
 'use strict'
-var abc = 100
+var abc = 100;
 for (var i = 1; i < 50; i++) {
-    console.log("kaishi" + i)
-    var temp = abc + i
+    console.log("kaishi" + i);
+    var temp = abc + i;
     if (temp == 110) {
-        console.log(i)
-        continue
+        console.log(i);
+        continue;
 
     } else if (temp == 120) {
-        console.log(i)
+        console.log(i);
     } else {
-        console.log("zhixing else" + i)
+        console.log("zhixing else" + i);
         if (temp > 120)
-            break
+            break;
     }
-    console.log("jieshu" + i)
+    console.log("jieshu" + i);
 }
 
-var x = new String()
+var x = new String();
 var d = new Date().getDay();
 switch (d) {
     case 0:
@@ -62,9 +62,9 @@ switch (d) {
         x = "今天是星期六";
         break;
 }
-console.log(x)
+console.log(x);
 
-var x1 = new String()
+var x1 = new String();
 var d = new Date().getDay();
 switch (d) {
     case 6:
@@ -76,4 +76,4 @@ switch (d) {
     default:
         x1 = "期待周末";
 }
-console.log(x1)
+console.log(x1);
