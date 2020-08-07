@@ -1,13 +1,17 @@
 /**一、js数据类型 
+ * 
  * 查看数据类型的关键字：typeof
+ * 
  * 在 JavaScript 中有 七 种不同的数据类型：string\number\boolean\object\null\undefined\Symbol
                 其中：3种原始类型（primitive type）：string\number\boolean
                      3种对象类型：Object\Array\Function
                      2 个不包含任何值的数据类型：null\undefined
                      NaN 的数据类型是 number
                      未定义变量的数据类型为 undefined
+
  * 1、值类型(基本类型)： 字符串(String)、数字(Number)、布尔(Boolean)、空(Null)、未定义(Undefined)、Symbol
  *       引用数据类型： 对象（Object）、数组（Array）、函数（Function）
+ * 
  * 2、变量初始化：
  * 字符串： var carname = 'mini'
  *         var carname = "volvo"
@@ -20,22 +24,22 @@
  *         JavaScript把null、undefined、0、NaN和空字符串''视为false，其他值一概视为true
  * 
  * Undefined 和 Null：Undefined 这个值表示变量不含有值。可以通过将变量的值设置为 null 来清空变量。
- ×
+ *
  * 
  * 数组：   var cars=["Saab","Volvo","BMW"]
- *         var cars=new Array("Saab","Volvo","BMW")
+ *                 var cars=new Array("Saab","Volvo","BMW")
  * 
  * 对象：   var person={firstname:"John", lastname:"Doe", id:5566};
- *         name=person.lastname;
- ×         name=person["lastname"];
+ *                 name=person.lastname;
+ *                 name=person["lastname"];
  *  
- × 3、声明变量类型
- ×   当您声明新变量时，可以使用关键词 "new" 来声明其类型：       
- *   var carname = new String;
- ×   var x=      new Number;
- ×   var y=      new Boolean;
- ×   var cars=   new Array;
- ×   var person = new Object;
+ * 3、声明变量类型
+ *       当您声明新变量时，可以使用关键词 "new" 来声明其类型：       
+ *       var carname = new String;
+ *       var x=      new Number;
+ *       var y=      new Boolean;
+ *       var cars=   new Array;
+ *       var person = new Object;
  *   
 */
 

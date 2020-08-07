@@ -1,5 +1,6 @@
 /**
- * 二、js对象
+ * 一、js数据类型 --- js对象
+ * 
  * 4、JavaScript 对象
  * 
  * JavaScript 中的所有事物都是对象
