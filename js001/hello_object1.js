@@ -10,7 +10,7 @@
  * 3)JavaScript语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
  * 4)JavaScript 语言使用构造函数（constructor）作为对象的模板。所谓”构造函数”，就是专门用来生成实例对象的函数。
  *   它就是对象的模板，描述实例对象的基本结构。一个构造函数，可以生成多个实例对象，这些实例对象都有相同的结构。
- * 5)构造函数的特点有两个。(为了与普通函数区别，构造函数名字的第一个字母通常大写。)
+ * 5)构造函数的特点有两个: (为了与普通函数区别，构造函数名字的第一个字母通常大写。)
  *     函数体内部使用了this关键字，代表了所要生成的对象实例。
  *     生成对象的时候，必须使用new命令。
  * 6)new 命令的原理: 使用new命令时，它后面的函数依次执行下面的步骤:
@@ -43,7 +43,7 @@ function Fubar1(foo, bar) {
 
 //Fubar1()  //直接使用会报错
 
-// 3、判断构造函数内部判断是否使用new命令，如果发现没有使用，则直接返回一个实例对象。
+// 3、构造函数内部判断是否使用new命令，如果发现没有使用，则直接返回一个实例对象。
 function Fubar2(foo, bar) {
     if (!(this instanceof Fubar2)) {
         return new Fubar2(foo, bar);
@@ -66,8 +66,18 @@ function getMessage() {
 
 var msg = new getMessage();
 
-console.log(msg) // {}
+console.log(msg) // { foo: 'Hello', bar: 'World' }
 console.log(typeof msg) // "object"
+
+// getMessage1是一个普通函数，返回一个字符串。对它使用new命令，会得到一个空对象。这是因为new命令总是返回一个对象，要么是实例对象，要么是return语句指定的对象。
+function getMessage1() {
+    return 'this is a message';
+}
+
+var msg1= new getMessage1();
+
+console.log(msg1) // {  }
+console.log(typeof msg1) // "object"
 
 // 4、new命令简化的内部流程，可以用下面的代码表示。
 function _new( /* 构造函数 */ constructor, /* 构造函数参数 */ params) {
@@ -105,7 +115,8 @@ function f1() {
     // ...
 }
 
-new f1() // Uncaught Error: 请使用 new 命令调用！
+f1() // Uncaught Error: 请使用 new 命令调用！
+new f1() //f1 {}
 
 // 6、构造函数作为模板，可以生成实例对象。如果以现有的对象作为模板，生成新的实例对象，这时就可以使用Object.create()方法。
 var person1 = {

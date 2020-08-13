@@ -1,46 +1,30 @@
 /**
  * 一、js数据类型 --- 函数
- * 5、箭头函数(Arrow Function)
- *        ES6标准新增了一种新的函数：Arrow Function（箭头函数）。为什么叫Arrow Function？因为它的定义用的就是一个箭头。
- * 
+ * 5、立即调用的函数表达式（IIFE）、eval 命令 
+ * 根据 JavaScript 的语法，圆括号()跟在函数名之后，表示调用该函数。
+ * “立即调用的函数表达式”（Immediately-Invoked Function Expression），简称 IIFE。
+    (function(){ * code * }());
+    // 或者
+    (function(){ * code * })();
+    // 或者
+    var i = function(){ return 10; }();
+*
+*IIFE 它的目的有两个：一是不必为函数命名，避免了污染全局变量；
+*                                           二是 IIFE 内部形成了一个单独的作用域，可以封装一些外部无法读取的私有变量。
+*
  */
 
+ // IIFE如下两种格式
+(function f1() {
+    var n = 888;
+    console.log(n);
+    return n;
+})();
 
-//1、箭头函数的定义：如下两个函数等价
+(function () {
+    var n = 999;
+    console.log(n);
+    return n;
+}());
 
-let efg = function (x) {
-    return x * x;
-}
-
-let abc = x => x * x;
-
-console.log(efg(2));
-console.log(abc(2));
-
-//2、单个自变量的箭头函数
-let qaz = x => {
-    if (x > 0) {
-        return x * x;
-    } else {
-        return -x * x;
-    }
-}
-
-//3、多个自变量的箭头函数，自变量参数需要用括号()括起来
-// 两个参数:
-wsx = (x, y) => x * x + y * y
-console.log("wsx = (x, y) => x * x + y * y   :" + wsx(2, 3));
-
-// 无参数:
-edc = () => 3.14
-console.log("edc = () => 3.14   :" + edc());
-
-// 可变参数:
-rfv = (x, y, ...rest) => {
-    var i, sum = x + y;
-    for (i = 0; i < rest.length; i++) {
-        sum += rest[i];
-    }
-    return sum;
-}
-console.log("rfv = (x, y, ...rest) =>  :" + rfv(1,2,3,4,5));
+// 
